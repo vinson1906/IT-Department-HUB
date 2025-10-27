@@ -4,6 +4,7 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const { connectDB } = require('./config/db')
 const StaffRoutes = require('./modules/auth/staff/staff.routes')
+const StudentRoute = require('./modules/auth/student/students.routes')
 
 
 dotenv.config()
@@ -19,6 +20,7 @@ app.get("/api", (req, res) => {
 })
 
 app.use("/api", StaffRoutes)
+app.use("/api",StudentRoute)
 
 const PORT = 1310;
 
